@@ -1,7 +1,20 @@
+html {
+    font-size: 1rem;
+}
+
 body {
     
     text-align: center;
     background-color: #26282B;
+
+    background: linear-gradient(-45deg, #2e1442, #1e144b, #0f345f, #26282B);
+    background-size: 10000% 10000%;
+    animation: gradient 5s ease infinite;
+}
+
+html, body {
+    width:100%;
+    height:100%;
 }
 
 /* h1 {
@@ -20,9 +33,20 @@ p {
     color:white;
 }
 
-.column {
 
+
+  
+  
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
-
 
 /* https://colorhunt.co/palette/35394126282b5f85db90b8f8 */
