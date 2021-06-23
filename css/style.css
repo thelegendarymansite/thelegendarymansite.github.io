@@ -1,5 +1,28 @@
-body{
+body {
     
     text-align: center;
     background-color: #26282B;
 }
+
+/* h1 {
+    color:white;
+}
+
+p {
+    color:white;
+} */
+
+#title {
+    color:white;
+}
+
+.row {
+    color:white;
+}
+
+.column {
+
+}
+
+
+/* https://colorhunt.co/palette/35394126282b5f85db90b8f8 */
