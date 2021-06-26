@@ -33,6 +33,12 @@ p {
     color:white;
 }
 
+.link-text {
+    background-color: none;
+    text-decoration: none; 
+    color: white; 
+}
+
 .rotate {
     margin-top: 10%;
     animation: rotation 1s infinite ease-in-out;
