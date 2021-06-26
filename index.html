@@ -25,14 +25,25 @@
                                 it not done<br>
                                 it being made</p>
             </div>
-            <div class="col-sm-6">
-                <h3>clicky clicky</h3>
 
-                <!-- <a href="#"> -->
-                    <img src="/images/easterEgg.png" class="rotate" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap()" />
-                <!-- </a> -->
+            <div class="col-sm-6">
+                <h3>clicky clicky and listen</h3>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>Igor Rap 1</p>
+                        <img src="/images/easterEgg.png" class="rotate" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap()" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p>Igor Rap 2</p>
+                        <img src="/images/igor.png" class="rotate2" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap2()" />
+                    </div>
+                    
+                </div>
+
 
             </div>
+
             <div class="col-sm-3">
                 <h3>funny discord land</h3>
                 <iframe src="https://discord.com/widget?id=854461338481721354&theme=dark" width="300" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
@@ -45,8 +56,15 @@
         // Play Igor Rap
         var IgorRap = new Audio('/sounds/IgorRap.mp3');
         function playIgorRap(){
+            IgorRap2.pause();
             IgorRap.currentTime = 0;
             IgorRap.play();
+        }
+        var IgorRap2 = new Audio('/sounds/IgorRap2.mp3');
+        function playIgorRap2(){
+            IgorRap.pause();
+            IgorRap2.currentTime = 0;
+            IgorRap2.play();
         }
     </script>
     

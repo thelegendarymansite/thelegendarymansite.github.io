@@ -48,6 +48,21 @@ p {
     }
   }
 
+  .rotate2 {
+    margin-top: 10%;
+    animation: rotation2 1s infinite ease-in-out;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes rotation2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
 
 
   
