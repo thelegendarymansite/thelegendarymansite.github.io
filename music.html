@@ -34,12 +34,28 @@
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>Igor Rap 1</p>
-                        <img src="/images/easterEgg.png" class="rotate" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap()" />
+                        <div class="beat-row">
+                            <p>Igor Rap 1</p>
+                            <img src="/images/easterEgg.png" class="rotate" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap()" />
+                        </div>
                     </div>
                     <div class="col-sm-6">
-                        <p>Igor Rap 2</p>
-                        <img src="/images/igor.png" class="rotate2" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap2()" />
+                        <div class="beat-row">
+                            <p>Igor Rap 2</p>
+                            <img src="/images/igor.png" class="rotate2" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap2()" />
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>RyzenHand</p>
+                        <img src="/images/igorMain.png" class="rotate" id="playIgorRapButton" width="154" height="164" onclick="playRyzenHandBeat()" />
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p>Igor Rap 2</p> -->
+                        <!-- <img src="/images/igor.png" class="rotate2" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap2()" /> -->
                     </div>
                     
                 </div>
@@ -60,14 +76,23 @@
         var IgorRap = new Audio('/sounds/IgorRap.mp3');
         function playIgorRap(){
             IgorRap2.pause();
+            ryzenHandBeat.pause();
             IgorRap.currentTime = 0;
             IgorRap.play();
         }
         var IgorRap2 = new Audio('/sounds/IgorRap2.mp3');
         function playIgorRap2(){
             IgorRap.pause();
+            ryzenHandBeat.pause();
             IgorRap2.currentTime = 0;
             IgorRap2.play();
+        }
+        var ryzenHandBeat = new Audio('/sounds/ryzenHandExtreme.mp3');
+        function playRyzenHandBeat(){
+            IgorRap.pause();
+            IgorRap2.pause();
+            ryzenHandBeat.currentTime = 0;
+            ryzenHandBeat.play();
         }
     </script>
     
