@@ -53,7 +53,8 @@ p {
 }
 
 .rotate {
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom:12%;
     animation: rotation 1s infinite ease-in-out;
     animation-direction: alternate;
   }
@@ -68,7 +69,8 @@ p {
   }
 
   .rotate2 {
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom:12%;
     animation: rotation2 1s infinite ease-in-out;
     animation-direction: alternate-reverse;
   }
