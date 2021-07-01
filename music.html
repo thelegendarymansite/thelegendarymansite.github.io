@@ -50,6 +50,18 @@
 
                 <div class="row">
                     <div class="col-sm-6" style="margin-bottom: 40px;">
+                        <p>Chillgor</p>
+                        <img src="/images/ryzenHand.png" class="rotate" id="playIgorRapButton" width="154" height="164" onclick="playChillgor1()" />
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- <p>Igor Rap 2</p> -->
+                        <!-- <img src="/images/igor.png" class="rotate2" id="playIgorRapButton" width="154" height="164" onclick="playIgorRap2()" /> -->
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6" style="margin-bottom: 40px;">
                         <p>RyzenHand</p>
                         <img src="/images/igorMain.png" class="rotate" id="playIgorRapButton" width="154" height="164" onclick="playRyzenHandBeat()" />
                     </div>
@@ -77,6 +89,7 @@
         function playIgorRap(){
             IgorRap2.pause();
             ryzenHandBeat.pause();
+            chillgorBeat.pause();
             IgorRap.currentTime = 0;
             IgorRap.play();
         }
@@ -84,6 +97,7 @@
         function playIgorRap2(){
             IgorRap.pause();
             ryzenHandBeat.pause();
+            chillgorBeat.pause();
             IgorRap2.currentTime = 0;
             IgorRap2.play();
         }
@@ -91,9 +105,19 @@
         function playRyzenHandBeat(){
             IgorRap.pause();
             IgorRap2.pause();
+            chillgorBeat.pause();
             ryzenHandBeat.currentTime = 0;
             ryzenHandBeat.play();
         }
+        var chillgorBeat = new Audio('/sounds/Chillgor.mp3');
+        function playChillgor1(){
+            IgorRap.pause();
+            IgorRap2.pause();
+            ryzenHandBeat.pause();
+            chillgorBeat.currentTime = 0;
+            chillgorBeat.play();
+        }
+
     </script>
     
     
