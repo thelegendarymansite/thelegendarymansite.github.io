@@ -1,7 +1,11 @@
 let planets = [];
 
+let constantSpeedCheckbox;
+
 function setup() {
 	createCanvas(windowWidth, windowHeight - windowHeight / 8);
+	constantSpeedCheckbox = createCheckbox('Constant Speed', false);
+	constantSpeedCheckbox.changed(constantSpeedCheckboxCheck);
 
 	frameRate(60);
 
@@ -13,18 +17,30 @@ function setup() {
 	angleMode(DEGREES);
 }
 
+function constantSpeedCheckboxCheck() {
+	if (constantSpeedCheckbox.checked()) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+
+
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight - windowHeight / 8);
 } 
 
 function draw() {
 
+
 	background(0);
 
 	translate(width / 2, height / 2);
 
 	for (let i in planets) {
-		for (let j = 0; j < planets.length; j++) {
+		for (let j in planets) {
 			stroke(120, 50);
 			strokeWeight(1);
 			line(planets[i].pos.x, planets[i].pos.y, planets[j].pos.x, planets[j].pos.y);
@@ -41,30 +57,40 @@ function draw() {
 }
 
 function mousePressed() {
-	planets.push(new Planet(mouseX - width / 2, mouseY - height / 2));
+	if (mouseX <= width && mouseY <= height) {
+		planets.push(new Planet(mouseX - width / 2, mouseY - height / 2));
+	}
 }
 
 class Planet {
 	constructor(x, y) {
 		if (x && y) {
 			this.pos = createVector(x, y);
-			this.pos.normalize();
-			this.pos.mult(dist(0, 0, x, y));
-			//this.pos.normalize();
+			// this.pos.normalize();
+			// this.pos.mult(dist(0, 0, x, y));
 
 		}
 		else {
 			this.pos = p5.Vector.random2D();
 			this.pos.mult(random(100, 300));
 		}
-		this.r = random(16, 32);
+		this.r = floor(random(16, 32));
 		this.red = random(255);
 		this.green = random(255);
 		this.blue = random(255);
 	}
 
 	update() {
-		this.pos.rotate(100 / pow(this.pos.mag(), 1));
+
+		if (constantSpeedCheckbox.checked()) {
+			this.pos.rotate(1);
+			
+		}
+		else {
+			this.pos.rotate(100 / pow(this.pos.mag(), 1));
+
+		}
+
 	}
 
 	show() {
