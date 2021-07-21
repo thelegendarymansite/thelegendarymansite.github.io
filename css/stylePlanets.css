@@ -1,0 +1,104 @@
+html {
+    font-size: 1rem;
+}
+
+
+body {
+    
+    text-align: center;
+    background-color: white;
+
+    background: linear-gradient(-45deg, #2e1442, #1e144b, #0f345f, #26282B);
+    background-size: 10000% 10000%;
+    animation: gradient 5s ease infinite;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar{
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+html, body {
+    width:100%;
+    height:100%;
+}
+
+/* h1 {
+    color:white;
+}
+
+p {
+    color:white;
+} */
+
+#title {
+    color:white;
+}
+
+.row {
+    color:white;
+}
+
+
+.link-text {
+    background-color: none;
+    text-decoration: none; 
+    color: white; 
+}
+
+.rotate {
+    margin-top: 5%;
+    margin-bottom:12%;
+    animation: rotation 1s infinite ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  .rotate2 {
+    margin-top: 5%;
+    margin-bottom:12%;
+    animation: rotation2 1s infinite ease-in-out;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes rotation2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+
+
+  
+  
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* https://colorhunt.co/palette/35394126282b5f85db90b8f8 */

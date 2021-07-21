@@ -1,10 +1,17 @@
 let planets = [];
 
 let constantSpeedCheckbox;
+let pauseButton;
+
+let fps = 0;
+
 
 function setup() {
 	createCanvas(windowWidth, windowHeight - windowHeight / 8);
+
 	constantSpeedCheckbox = createCheckbox('Constant Speed', false);
+	pauseButton = createCheckbox('Pause', false);
+
 	constantSpeedCheckbox.changed(constantSpeedCheckboxCheck);
 
 	frameRate(60);
@@ -26,6 +33,15 @@ function constantSpeedCheckboxCheck() {
 	}
 }
 
+function paused() {
+	if (pauseButton.checked()) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 
 
 function windowResized() {
@@ -33,6 +49,10 @@ function windowResized() {
 } 
 
 function draw() {
+
+	if (frameCount % 2 == 0) {
+		fps = frameRate();
+	}
 
 
 	background(0);
@@ -53,6 +73,11 @@ function draw() {
 	fill(255, 255, 0);
 	noStroke();
 	ellipse(0, 0, 64);
+
+	fill(255);
+	resetMatrix();
+	textSize(20);
+	text("FPS: " + floor(fps), 20, 30);
 
 }
 
@@ -82,13 +107,15 @@ class Planet {
 
 	update() {
 
-		if (constantSpeedCheckbox.checked()) {
-			this.pos.rotate(1);
-			
-		}
-		else {
-			this.pos.rotate(100 / pow(this.pos.mag(), 1));
-
+		if (!pauseButton.checked()) {
+			if (constantSpeedCheckbox.checked()) {
+				this.pos.rotate(1);
+				
+			}
+			else {
+				this.pos.rotate(100 / pow(this.pos.mag(), 1));
+	
+			}
 		}
 
 	}
