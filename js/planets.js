@@ -54,9 +54,9 @@ function draw() {
 
 	frameRate(fpsSlider.value());
 
-	if (frameCount % 2 == 0) {
-		fps = frameRate();
-	}
+	//if (frameCount % 2 == 0) {
+	fps = frameRate();
+	//}
 
 
 	background(0);
