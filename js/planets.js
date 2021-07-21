@@ -2,6 +2,7 @@ let planets = [];
 
 let constantSpeedCheckbox;
 let pauseButton;
+let fpsSlider;
 
 let fps = 0;
 
@@ -11,6 +12,7 @@ function setup() {
 
 	constantSpeedCheckbox = createCheckbox('Constant Speed', false);
 	pauseButton = createCheckbox('Pause', false);
+	fpsSlider = createSlider(5, 120, 60);
 
 	constantSpeedCheckbox.changed(constantSpeedCheckboxCheck);
 
@@ -49,6 +51,8 @@ function windowResized() {
 } 
 
 function draw() {
+
+	frameRate(fpsSlider.value());
 
 	if (frameCount % 2 == 0) {
 		fps = frameRate();
