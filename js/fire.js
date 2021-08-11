@@ -83,6 +83,7 @@ class Particle {
 		this.color = color(this.red, this.green, 0, this.alpha);
 
 		if (this.alpha > 100) {
+			// yes
 		}
 		else {
 
