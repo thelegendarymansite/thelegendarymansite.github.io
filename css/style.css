@@ -101,3 +101,12 @@ p {
 }
 
 /* https://colorhunt.co/palette/35394126282b5f85db90b8f8 */
+
+
+
+#bannerbottom {
+  position: fixed;
+  bottom:0%;
+  width: 100%;
+  left: 0;
+}
