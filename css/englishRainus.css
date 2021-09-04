@@ -1,5 +1,6 @@
 html {
     font-size: 1rem;
+    cursor:url("/images/igorMain.png"), auto;
 }
 
 body {
@@ -29,13 +30,6 @@ html, body {
     height:100%;
 }
 
-/* h1 {
-    color:white;
-}
-
-p {
-    color:white;
-} */
 
 #title {
     color:white;
@@ -44,7 +38,6 @@ p {
 .row {
     color:white;
 }
-
 
 .link-text {
     background-color: none;
@@ -106,3 +99,6 @@ p {
   width: 100%;
   left: 0;
 }
+
+
+/* CURSORS */
