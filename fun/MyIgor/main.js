@@ -1,9 +1,7 @@
 let menuNum = 0;
 
-
 // 0 - main menu
 // 1 - load menu
-let passwordInput;
 // 2 - start
 
 let bgImg;
@@ -143,7 +141,7 @@ function draw() {
         text("Back", width / 2, height / 1.2 - 5);
     }
 
-    // START
+    // Start
     else if (menuNum == 2) {
         textSize(width / 20);
 
