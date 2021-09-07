@@ -31,20 +31,27 @@ function draw() {
     // Main Menu
     if (menuNum == 0) {
 
-        textSize(width / 20);
-        fill(100);
+        textSize(width / 10);
+        fill(255);
 
 
         background(0);
         image(bgImg, 0, 0, 600, 600);
 
-        text("MyIgor one", width / 2, height / 4 - 5);
+
+
+        text("My Igor", width / 2, height / 4 - 5);
+
+        textSize(width / 20);
+
+        text("version 0.1", width / 2, height / 1.05 - 5);
+
 
 
         // Start Button
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 350 / 2, height / 2 - 75 / 2, width / 2 + 350 / 2, height / 2 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 250 / 2, height / 2 - 75 / 2, width / 2 + 250 / 2, height / 2 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
                 menuNum = 2;
@@ -54,9 +61,9 @@ function draw() {
             fill(100);
         }
 
-        rect(width / 2, height / 2, 350, 75, 10);
+        rect(width / 2, height / 2, 250, 75, 10);
         fill(255);
-        text("Start New Game", width / 2, height / 2 - 5);
+        text("New Game", width / 2, height / 2 - 5);
 
         // Load Button
 
@@ -92,7 +99,7 @@ function draw() {
 
         // passwordInput = createInput();
         // passwordInput.position(width / 2 - 350 / 4, height / 2 - 75 / 4);
-        rect(width / 2, height / 2, 450, 75, 10);
+        rect(width / 2, height / 2, 350, 75, 10);
         fill(255);
         textSize(width / 20);
 
