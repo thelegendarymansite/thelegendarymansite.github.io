@@ -44,7 +44,7 @@ function draw() {
         // Start Button
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 350, height / 2 - 75 / 2, width / 2 + 350 / 2, height / 2 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 350 / 2, height / 2 - 75 / 2, width / 2 + 350 / 2, height / 2 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
                 menuNum = 2;
@@ -63,7 +63,7 @@ function draw() {
         fill(100);
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 250, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 250 / 2, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
                 menuNum = 1;
@@ -105,7 +105,7 @@ function draw() {
         fill(100);
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 250, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 250 / 2, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
             fill(120);
         }
         else {
@@ -121,7 +121,7 @@ function draw() {
         fill(100);
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 250, height / 1.2 - 75 / 2, width / 2 + 250 / 2, height / 1.2 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 250 / 2, height / 1.2 - 75 / 2, width / 2 + 250 / 2, height / 1.2 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
                 menuNum = 0;
@@ -158,7 +158,7 @@ function draw() {
         fill(100);
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 250, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 250 / 2, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
                 menuNum = 0;
