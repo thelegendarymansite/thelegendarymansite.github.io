@@ -10,7 +10,7 @@ let bgImg;
 
 function preload() {
     bgImg = loadImage('MyIgor/textures/stars.png');
-    ruskiFont = loadFont('MyIgor/textures/PROPAGAN.ttf');
+    ruskiFont = loadFont('MyIgor/textures/troika.otf');
 }
 
 function setup() {
@@ -38,7 +38,7 @@ function draw() {
         background(0);
         image(bgImg, 0, 0, 600, 600);
 
-        text("even the menu is broken!", width / 2, height / 4 - 5);
+        text("MyIgor one", width / 2, height / 4 - 5);
 
 
         // Start Button
@@ -114,7 +114,7 @@ function draw() {
 
         rect(width / 2, height / 1.5, 250, 75, 10);
         fill(255);
-        text("Load Game", width / 2, height / 1.5 - 5);
+        text("Submit", width / 2, height / 1.5 - 5);
 
         // Back Button
 
@@ -147,18 +147,18 @@ function draw() {
 
         rect(width / 2, height / 2, 450, 75, 10);
         fill(255);
-        textSize(width / 40);
+        textSize(width / 20);
 
         text("only the menu is completed ;c", width / 2, height / 2 - 5);
         textSize(width / 20);
 
 
-        // Load Button
+        // Back Button
 
         fill(100);
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 250 / 2, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 250 / 2, height / 1.2 - 75 / 2, width / 2 + 250 / 2, height / 1.2 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
                 menuNum = 0;
@@ -168,9 +168,9 @@ function draw() {
             fill(100);
         }
 
-        rect(width / 2, height / 1.5, 250, 75, 10);
+        rect(width / 2, height / 1.2, 250, 75, 10);
         fill(255);
-        text("Back", width / 2, height / 1.5 - 5);
+        text("Back", width / 2, height / 1.2 - 5);
 
     }
 
