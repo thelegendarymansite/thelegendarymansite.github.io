@@ -9,6 +9,7 @@ let g;
 
 let igorSound;
 let clickSound;
+let hoverSound;
 
 function preload() {
     bgImg = loadImage('MyIgor/textures/menubg.png');
@@ -25,7 +26,7 @@ function setup() {
 
     igorSound = loadSound('MyIgor/textures/ir.wav');
     clickSound = loadSound('MyIgor/textures/click.wav');
-
+    hoverSound = loadSound('MyIgor/textures/hoverSound.wav');
 
     textFont(ruskiFont);
     textAlign(CENTER, CENTER);
@@ -66,7 +67,9 @@ function draw() {
             // Hover Effect
         if (HoveredOver(width / 2 - 250 / 2, height / 2 - 75 / 2, width / 2 + 250 / 2, height / 2 + 75 / 2)) {
             fill(120);
-            if (mouseIsPressed) {
+            playHover();
+            if (mouseIsPressed && !g.pressed) {
+                g.pressed = true;
                 playClick();
                 menuNum = 2;
             }
@@ -86,7 +89,9 @@ function draw() {
             // Hover Effect
         if (HoveredOver(width / 2 - 250 / 2, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
             fill(120);
-            if (mouseIsPressed) {
+            playHover();
+            if (mouseIsPressed && !g.pressed) {
+                g.pressed = true;
                 playClick();
                 menuNum = 1;
             }
@@ -128,6 +133,7 @@ function draw() {
 
             // Hover Effect
         if (HoveredOver(width / 2 - 250 / 2, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
+            playHover();
             fill(120);
         }
         else {
@@ -144,8 +150,10 @@ function draw() {
 
             // Hover Effect
         if (HoveredOver(width / 2 - 250 / 2, height / 1.2 - 75 / 2, width / 2 + 250 / 2, height / 1.2 + 75 / 2)) {
+            playHover();
             fill(120);
-            if (mouseIsPressed) {
+            if (mouseIsPressed && !g.pressed) {
+                g.pressed = true;
                 playClick();
                 menuNum = 0;
             }
@@ -200,6 +208,7 @@ function draw() {
             // Hover Effect
         if (HoveredOver(width / 2 - 250 / 2, height / 1.1 - 75 / 2, width / 2 + 250 / 2, height / 1.1 + 75 / 2)) {
             fill(120);
+            playHover();
             if (mouseIsPressed && !g.pressed) {
                 playClick();
                 print("back");
@@ -219,6 +228,8 @@ function draw() {
 
 }
 
+let hovering = false;
+let playing = false;
 
 
 function HoveredOver(x1, y1, x2, y2) {
@@ -231,14 +242,29 @@ function HoveredOver(x1, y1, x2, y2) {
     //  |_________________x2y2
     //
 
-    if (mouseX <= x2 && mouseX >= x1) {
-        if (mouseY <= y2 && mouseY >= y1) {
-            return true;
-        }
+    if ((mouseX <= x2 && mouseX >= x1) && (mouseY <= y2 && mouseY >= y1)) {
+        hovering = true;
+        print("playing");
+
+        return true;
+
     }
-    return false;
+    else {
+        playing = false;
+        print("not playing");
+        return false;
+    }
+
 }
 
 function playClick() {
     clickSound.play();
+}
+
+
+function playHover() {
+    if (!playing) {
+        hoverSound.play();
+        playing = true;
+    }
 }

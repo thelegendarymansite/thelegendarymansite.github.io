@@ -48,7 +48,7 @@ class Game {
         // check if over shop + press
         if (HoveredOver(width / 2 - 50, height / 1.1 - 75 / 2, width / 2 + 50, height / 1.1 + 75 / 2)) {
             fill(120);
-
+            playHover();
             if (mouseIsPressed && !this.pressed) {
                 this.pressed = true;
                 playClick();
