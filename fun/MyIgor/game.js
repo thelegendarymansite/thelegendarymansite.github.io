@@ -40,6 +40,7 @@ class Game {
         if (HoveredOver(width / 2 - 50, height / 2 - 50, width / 2 + 50, height / 2 + 50)) {
             if (mouseIsPressed && !this.pressed) {
                 this.tickleCount += 1;
+                igorSound.play();
                 this.pressed = true;
             }
         }
@@ -50,6 +51,7 @@ class Game {
 
             if (mouseIsPressed && !this.pressed) {
                 this.pressed = true;
+                playClick();
                 print("shop");
                 menuNum = 3;
             }
@@ -64,5 +66,4 @@ class Game {
 
 function mouseReleased() {
     g.pressed = false;
-
 }

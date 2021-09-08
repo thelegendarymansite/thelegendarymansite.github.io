@@ -7,6 +7,9 @@ let menuNum = 0;
 let bgImg;
 let g;
 
+let igorSound;
+let clickSound;
+
 function preload() {
     bgImg = loadImage('MyIgor/textures/menubg.png');
     shopImg = loadImage('MyIgor/textures/shopbg.png');
@@ -19,6 +22,10 @@ function setup() {
 
     createCanvas(600, 600);
     rectMode(CENTER);
+
+    igorSound = loadSound('MyIgor/textures/ir.wav');
+    clickSound = loadSound('MyIgor/textures/click.wav');
+
 
     textFont(ruskiFont);
     textAlign(CENTER, CENTER);
@@ -60,6 +67,7 @@ function draw() {
         if (HoveredOver(width / 2 - 250 / 2, height / 2 - 75 / 2, width / 2 + 250 / 2, height / 2 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
+                playClick();
                 menuNum = 2;
             }
         }
@@ -79,6 +87,7 @@ function draw() {
         if (HoveredOver(width / 2 - 250 / 2, height / 1.5 - 75 / 2, width / 2 + 250 / 2, height / 1.5 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
+                playClick();
                 menuNum = 1;
             }
         }
@@ -137,6 +146,7 @@ function draw() {
         if (HoveredOver(width / 2 - 250 / 2, height / 1.2 - 75 / 2, width / 2 + 250 / 2, height / 1.2 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed) {
+                playClick();
                 menuNum = 0;
             }
         }
@@ -191,6 +201,7 @@ function draw() {
         if (HoveredOver(width / 2 - 250 / 2, height / 1.1 - 75 / 2, width / 2 + 250 / 2, height / 1.1 + 75 / 2)) {
             fill(120);
             if (mouseIsPressed && !g.pressed) {
+                playClick();
                 print("back");
                 g.pressed = true;
                 menuNum = 2;
@@ -226,4 +237,8 @@ function HoveredOver(x1, y1, x2, y2) {
         }
     }
     return false;
+}
+
+function playClick() {
+    clickSound.play();
 }
