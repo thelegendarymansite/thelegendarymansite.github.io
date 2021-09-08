@@ -5,10 +5,12 @@ let menuNum = 0;
 // 2 - start
 
 let bgImg;
+let g;
 
 function preload() {
     bgImg = loadImage('MyIgor/textures/stars.png');
     ruskiFont = loadFont('MyIgor/textures/troika.otf');
+    igor = loadImage('MyIgor/textures/igorMain.png');
 }
 
 function setup() {
@@ -18,6 +20,10 @@ function setup() {
 
     textFont(ruskiFont);
     textAlign(CENTER, CENTER);
+
+    g = new Game();
+
+    noStroke();
 
 }
 
@@ -42,7 +48,7 @@ function draw() {
 
         textSize(width / 20);
 
-        text("version 0.1", width / 2, height / 1.05 - 5);
+        text("version 0.0.2", width / 2, height / 1.05 - 5);
 
 
 
@@ -141,42 +147,47 @@ function draw() {
         text("Back", width / 2, height / 1.2 - 5);
     }
 
-    // Start
+    // Game
     else if (menuNum == 2) {
-        textSize(width / 20);
 
+        fill(100);
+
+        g.checkInput();
+        g.drawBackground();
+        g.drawButtons();
+        g.drawIgor();
+        g.drawText();
+
+    }
+
+    else if (menuNum == 3) {
+        
         fill(100);
 
         background(0);
         image(bgImg, 0, 0, 600, 600);
-
-        rect(width / 2, height / 2, 450, 75, 10);
-        fill(255);
-        textSize(width / 20);
-
-        text("only the menu is completed ;c", width / 2, height / 2 - 5);
-        textSize(width / 20);
-
 
         // Back Button
 
         fill(100);
 
             // Hover Effect
-        if (HoveredOver(width / 2 - 250 / 2, height / 1.2 - 75 / 2, width / 2 + 250 / 2, height / 1.2 + 75 / 2)) {
+        if (HoveredOver(width / 2 - 250 / 2, height / 1.1 - 75 / 2, width / 2 + 250 / 2, height / 1.1 + 75 / 2)) {
             fill(120);
-            if (mouseIsPressed) {
-                menuNum = 0;
+            if (mouseIsPressed && !g.pressed) {
+                print("back");
+                g.pressed = true;
+                menuNum = 2;
             }
         }
         else {
             fill(100);
         }
 
-        rect(width / 2, height / 1.2, 250, 75, 10);
-        fill(255);
-        text("Back", width / 2, height / 1.2 - 5);
+        rect(width / 2, height / 1.1, 250, 75, 10);
 
+        fill(255);
+        text("Back", width / 2, height / 1.1 - 5);
     }
 
 }
