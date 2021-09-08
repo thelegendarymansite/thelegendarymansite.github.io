@@ -8,7 +8,9 @@ let bgImg;
 let g;
 
 function preload() {
-    bgImg = loadImage('MyIgor/textures/stars.png');
+    bgImg = loadImage('MyIgor/textures/menubg.png');
+    shopImg = loadImage('MyIgor/textures/shopbg.png');
+
     ruskiFont = loadFont('MyIgor/textures/troika.otf');
     igor = loadImage('MyIgor/textures/igorMain.png');
 }
@@ -36,7 +38,7 @@ function draw() {
     if (menuNum == 0) {
 
         textSize(width / 10);
-        fill(255);
+        fill(0);
 
 
         background(0);
@@ -160,12 +162,26 @@ function draw() {
 
     }
 
+    // Shop
     else if (menuNum == 3) {
         
         fill(100);
 
         background(0);
-        image(bgImg, 0, 0, 600, 600);
+        image(shopImg, 0, 0, 600, 600);
+
+        push();
+        fill(255);
+        textSize(width / 10);
+
+        text("Shop", width / 2, height / 10 - 5);
+
+        textSize(width / 20);
+
+        text("Igor's basement is empty", width / 2, height / 2 - 5);
+
+        pop();
+
 
         // Back Button
 

@@ -8,7 +8,7 @@ class Game {
     }
 
     drawBackground() {
-        background(255, 100, 255);
+        background(255, 200, 255);
     }
 
     drawButtons() {
