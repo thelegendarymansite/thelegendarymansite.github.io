@@ -14,12 +14,14 @@ function preload() {
 
 }
 
+
 let menu = "mainMenu";
 let inMenu = true;
 
 let playing = false;
 
 let hb;
+
 
 function setup() {
 
@@ -32,6 +34,8 @@ function setup() {
     textSize(width / 20);
 
     rectMode(CENTER);
+
+    angleMode(DEGREES);
 
     noStroke();
 

@@ -4,6 +4,8 @@ class HoverButton {
         this.posY = posY;
         this.sizeX = sizeX;
         this.sizeY = sizeY;
+        this.sizeXORG = sizeX;
+        this.sizeYORG = sizeY;
         this.rounding = rounding;
         this.offColor = offColor;
         this.onColor = onColor;
@@ -14,6 +16,10 @@ class HoverButton {
         this.playingClick = false;
         this.clicked = false;
         this.destination = destination;
+
+        this.hoverSizeX = this.sizeX + 4;
+        this.hoverSizeY = this.sizeY + 4;
+
     }
 
     DrawButton() {
@@ -26,6 +32,9 @@ class HoverButton {
             this.PlayHoverSound();
             this.playing = true;
             fill(this.onColor);
+
+            this.sizeX = this.hoverSizeX;
+            this.sizeY = this.hoverSizeY;
 
             if (mouseIsPressed && !this.clicked) {
                 this.PlayClickSound();
@@ -41,6 +50,9 @@ class HoverButton {
         else {
             this.playing = false;
             fill(this.offColor);
+
+            this.sizeX = this.sizeXORG;
+            this.sizeY = this.sizeYORG;
         }
     
         rect(this.posX, this.posY, this.sizeX, this.sizeY, this.rounding);
