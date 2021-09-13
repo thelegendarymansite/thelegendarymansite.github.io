@@ -1,5 +1,5 @@
 class HoverButton {
-    constructor(posX, posY, sizeX, sizeY, rounding, offColor, onColor, txt, txtColor, txtSize) {
+    constructor(posX, posY, sizeX, sizeY, rounding, offColor, onColor, txt, txtColor, txtSize, destination) {
         this.posX = posX;
         this.posY = posY;
         this.sizeX = sizeX;
@@ -13,6 +13,7 @@ class HoverButton {
         this.playing = false;
         this.playingClick = false;
         this.clicked = false;
+        this.destination = destination;
     }
 
     DrawButton() {
@@ -34,6 +35,7 @@ class HoverButton {
             if (!mouseIsPressed && this.clicked) {
                 this.clicked = false;
                 this.playingClick = false;
+                menu = this.destination;
             }
         }
         else {

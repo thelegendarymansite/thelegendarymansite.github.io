@@ -13,6 +13,7 @@ class FlyingIgor {
         image(igorSmall, this.posX, this.posY, 32, 32);
 
         if (this.posX >= width) {
+            this.posY = random(0, height);
             this.posX = -60;
         }
     }

@@ -2,7 +2,7 @@ function preload() {
 
     ruskiFont = loadFont('MyIgorBETA/misc/troika.otf');
 
-    bgMain = loadImage('MyIgorBETA/textures/menubg.png');
+    bgMain = loadImage('MyIgorBETA/textures/infinitebg.png');
 
     igorSmall = loadImage('MyIgorBETA/textures/igorMain.png');
 
