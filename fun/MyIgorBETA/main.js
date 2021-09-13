@@ -14,14 +14,12 @@ function preload() {
 
 }
 
-
 let menu = "mainMenu";
 let inMenu = true;
 
 let playing = false;
 
 let hb;
-
 
 function setup() {
 
